@@ -16,12 +16,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.cors().and().csrf().disable();
         /*httpSecurity.cors().configurationSource(request -> new CorsConfiguration(corsConfiguratione()));*/
-        httpSecurity.headers().frameOptions().disable();
-        /*httpSecurity
+        //httpSecurity.headers().frameOptions().disable();
+        httpSecurity
                 .antMatcher("/**").authorizeRequests()
                 .antMatchers("/").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .oauth2Login();*/
+                .oauth2Login();
     }
 }
